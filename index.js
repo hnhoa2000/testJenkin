@@ -9,7 +9,7 @@ async function storeFiles(path) {
     console.log(`https://dweb.link/ipfs/${cid}`)
 }
 
-storeFiles('./helloworld.txt');
+//storeFiles('./helloworld.txt');
 async function retrieve(cid) {
     const res = await client.get(cid);
     console.log(`Got a response! [${res.status}] ${res.statusText}`);
@@ -29,3 +29,11 @@ async function retrieve(cid) {
 }
 
 //retrieve('bafybeiasckdwhirpgn2ouirzkzqoacmbezkffhlhzlp4q7yx5kyncufgtu')
+import express from 'express';
+const app = express();
+
+app.get('/', (req, res) => {
+    res.send("hello");
+})
+
+app.listen(3000);
